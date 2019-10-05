@@ -105,10 +105,30 @@ function trueFalse(tf) {
 const pets = ['cat', 'hamster', 'dog', 'mouse', 'hedgehod'];
 const test5 = contains('mouse', pets, trueFalse);
 console.log(test5);
+
+
+
+
+
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+const dupArr = [];
+array.forEach(function(item){
+  if(!dupArr.includes(item)){
+    dupArr.push(item);
+  }
+})
+cb(dupArr)
 }
+
+const cbFunc = function(thing){
+  console.log(thing);
+}
+
+itemsArr = ['cat', 'hamster', 'dog', 'mouse', 'hedgehod', 'dog', 'horse', 'cat', 'bunny','cat', 'chicken', 'horse'];
+const finalArr =removeDuplicates(itemsArr, cbFunc);
+console.log(finalArr);

@@ -4,6 +4,22 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+let dog_treat_count = 0;
+const dog_treats = function() {
+  const dog_sits = function() {
+    dog_treat_count++;
+    console.log(`Good puppy, you've had ${dog_treat_count} treats now!`)
+  }
+  dog_sits();
+}
+
+
+dog_treats();
+dog_treats();
+dog_treats();
+dog_treats();
+dog_treats();
+dog_treats();
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 

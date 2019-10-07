@@ -25,6 +25,7 @@ dog_treats();
 
 
 // ==== Challenge 2: Implement a "counter maker" function ====
+let count = 0;
 const counterMaker = () => {
   // IMPLEMENTATION OF counterMaker:
   // 1- Declare a `count` variable with a value of 0. We will be mutating it, so declare it using `let`!
@@ -32,8 +33,18 @@ const counterMaker = () => {
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
+
+  function counter() {
+    return count++;
+  }
+  return counter();
 };
-// Example usage: const myCounter = counterMaker();
+
+console.log(counterMaker());
+console.log(counterMaker());
+console.log(counterMaker());
+// Example usage: 
+// const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2
 

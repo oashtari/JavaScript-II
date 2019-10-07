@@ -35,14 +35,15 @@ const counterMaker = () => {
   // 3- Return the `counter` function.
 
   function counter() {
-    return count++;
+    return ++count;
   }
   return counter();
 };
+const newCounter = counterMaker;
+console.log(newCounter());
+console.log(newCounter());
+console.log(newCounter());
 
-console.log(counterMaker());
-console.log(counterMaker());
-console.log(counterMaker());
 // Example usage: 
 // const myCounter = counterMaker();
 // myCounter(); // 1
